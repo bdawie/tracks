@@ -1,28 +1,21 @@
 (function(){
-    let tracks=[
-    {
-        id:1230,
-        params:{
+    let tracks={
+        1230:{
             name:'track1',
             genre:'techno'
         }
-       
-    },
-    {
-        id:1232,
-        params:{
-            name:'track2',
-            genre:'house'
+    }
+    
+    tracks['1232']={
+        name:'track2',
+        genre:'house'
+    }
+    tracks['1230'].length=5.47;
+
+    for(id in tracks){
+        if(tracks.hasOwnProperty(id)){
+            console.log(`Id:${id} with name: ${tracks[id].name}`);   
         }
     }
-]
-
-tracks.forEach((track)=>{
-    if(track.id===1230) track.params.length=5.47;
-});
-
-tracks.forEach((track)=>{
-    console.log(track.params.name);
-});
-
+    
 })()
